@@ -26,6 +26,7 @@ const MessageForm = (props) => {
     }
   };
 
+  /* Checks if a message media is a text or image. */
   const handleUpload = (event) => {
     sendMessage(creds, chatId, { files: event.target.files, text: '' });
   };

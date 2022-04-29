@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router";
 import "./Homepage.css";
-import { ChatEngine} from 'react-chat-engine';
-import ChatFeed from './components/ChatFeed';
+import { ChatEngine } from 'react-chat-engine';
 
 import { auth, db, logout } from "./firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
+
+// Routing to chat application upon successful registration and login.
 function Homepage() {
     return (
         <ChatEngine
             height = "100vh"
             projectID = "8d858bcf-4ccf-4109-a54b-0c8313bf9f8b"
             userName = "admin"
-            userSecret = "123zxcv"
-            renderChatFeed = {(chatAppProps) => <ChatFeed {...chatAppProps} />}    
+            userSecret = "123zxcv"  
         />
     );
 };

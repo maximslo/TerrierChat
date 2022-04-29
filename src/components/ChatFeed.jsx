@@ -10,6 +10,7 @@ const ChatFeed = (props) =>{
     /*if chat exists then find activeChats in chats*/
     console.log(chat, userName, messages);
 
+    /* A function that shows when a user has read a message. */
     const renderReadReceipts = (message, isMyMessage) => {chat.people.map((person, index) => person.last_read === message.id && (
       <div
         key={`read_${index}`}
@@ -17,6 +18,7 @@ const ChatFeed = (props) =>{
         style={{
           float: isMyMessage ? 'right' : 'left',
           backgroundImage: person.person.avatar && `url(${person.person.avatar})`,
+          // displays person avatar!
         }}
       />
     ));}
@@ -48,7 +50,8 @@ const ChatFeed = (props) =>{
         )
     }
     if (!chat) return <div />;
-
+    
+    // Structure of HTML framing and UI.
     return (
       <div className="chat-feed">
         <div className="chat-title-container">

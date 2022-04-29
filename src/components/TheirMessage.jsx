@@ -1,4 +1,6 @@
 import React from 'react';
+
+/* Displays positioning of text bubbles.*/
 const TheirMessage = ({ lastMessage, message }) => {
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
   

@@ -5,6 +5,7 @@ import { auth, db } from "../firebase";
 
 import "./Register.css";
 
+// Handles register form for new users
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

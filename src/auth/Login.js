@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, signIn } from "../firebase.js";
 import "./Login.css";
 
+// Handles login form for returning users
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -1,4 +1,6 @@
 import React from 'react';
+
+/* Displays positioning of text bubbles.*/
 const MyMessage = ({ message }) => {
     if (message.attachments && message.attachments.length > 0) {
       return (
@@ -19,5 +21,3 @@ const MyMessage = ({ message }) => {
   };
   
   export default MyMessage;
-
-/*a chat bubble*/

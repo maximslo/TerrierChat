@@ -10,6 +10,7 @@ import {
   checkActionCode,
 } from "firebase/auth";
 
+// Firebase configuration information
 const firebaseConfig = {
     apiKey: "AIzaSyB6DW6l39hZOl-IhNVrGeam7qlx_CvwT5I",
     authDomain: "terrierchat-9c94a.firebaseapp.com",
@@ -19,11 +20,12 @@ const firebaseConfig = {
     appId: "1:306549665874:web:d217ef3566cadd50cb6f8b",
     measurementId: "G-8Y9B54KF8G"
   };
-
+  // Initialization
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const auth = getAuth(app);
 
+  // Sign in methodology
   const signIn = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -33,25 +35,7 @@ const firebaseConfig = {
     }
   };
 
-  // const register = async (email, password) => {
-  //   try {
-      
-  //       const res = await createUserWithEmailAndPassword(auth, email, password);
-  //       const user = res.user;
-  //       const docRef = await addDoc(collection(db, "users"), {
-  //         uid: user.uid,
-  //         email,
-  //         role,
-  //         school,
-  //       });
-  //       console.log("Document written with ID: ", docRef.id);
-  //     }
-  //   } catch (err) {
-  //     console.error(err);
-  //     alert(err.message);
-  //   }
-  // };
-  
+  // Reset password methodology
   const resetPassword = async (email) => {
     try {
       await sendPasswordResetEmail(auth, email);
@@ -62,6 +46,7 @@ const firebaseConfig = {
     }
   };
   
+  // Future possible logout function
   const logout = () => {
     auth.signOut();
   };
